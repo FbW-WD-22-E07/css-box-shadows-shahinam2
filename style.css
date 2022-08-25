@@ -5,19 +5,35 @@
     box-sizing: border-box;
 }
 
+/* html {
+    height: 150vh;
+} */
+
 body {
     /* how to center the main`? */
+    display: grid;
+    place-items: center;
+
+    height: 90vh;
+    border: 10px solid black;
+
     background-color: lightblue;
     /* use a font on your page */
+    
+    font-family: 'Roboto', sans-serif;
 }
+
 main.container {
-    width: 60vh;
+    width: 60vw;
     height: 80vh;
     padding: 30px;
     background-color: white;
     font-size: 2em;
     color: hsl(0, 0%, 49%);
     /* how to arrange children? */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .shadow {
@@ -25,8 +41,13 @@ main.container {
     width: 40%;
     height: 40%;
     /* how to center the text`? */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     /* add cursor pointer here or in each child? */
+    cursor: pointer;
+    transition: all 1s;
 }
 
 /* first try to make similar shadows,then make shadows that you like */
@@ -34,18 +55,37 @@ main.container {
 /* add text shadow and text elevation effect */
 
 /* you can use :nth-child() instead of id if you want */
+
 #one {
     /* use another font on a spesific element */
+    font-family: 'Miniver', cursive;
 }
 
-#two {
+#one:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.16);
 }
+
+#two:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+#three:hover {
+    box-shadow: 0px 20px 10px hsl(59, 100%, 30%),
+                0px 50px 20px hsl(237, 99%, 49%) ;
+                /* 5px -5px 30px hsl(143, 100%, 50%) */
+}
+
 /* add text shadow and then text elevation effect with transform scale` */
-#tow h4{
+#two h4 {
+    transition: all 1s;
+}   
 
+#two:hover h4 {
+    transform: scale(1.2);
+    text-shadow: 5px 5px 5px rgb(209, 18, 18);
 }
-#three {
-}
+
 
 #four {
+    box-shadow: inset 5px 5px 5px hsl(0, 0%, 36%);
 }
